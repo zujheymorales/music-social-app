@@ -1,9 +1,10 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { pool } from "../config/db.js";
+import { env } from "../config/env.js";
 
 // Later we’ll move this into .env, but this is fine for now
-const JWT_SECRET = "dev_secret_change_later";
+const JWT_SECRET = env.JWT_SECRET;
 
 export async function register(req, res) {
   try {
